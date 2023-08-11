@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+ 
+<script type="text/javascript"> 
+$(function(){	
+	//导航切换
+	$(".menuson li").click(function(){
+		$(".menuson li.active").removeClass("active")
+		$(this).addClass("active");
+	});
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('ul').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('ul').slideUp();
+		}else{
+			$(this).next('ul').slideDown();
+		}
+	});
+})	
+</script>
+ 
+ 
+</head>
+ 
+<body style="background:#f0f9fd;">
+	<div class="lefttop"><div id="Clock" style="color:#ffffff;"></div>
+	<script> 
+function tick() {
+var hours, minutes, seconds, xfile;
+var intHours, intMinutes, intSeconds;
+var today, theday;
+today = new Date();
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i] }
+var d=new initArray(
+"星期日",
+"星期一",
+"星期二",
+"星期三",
+"星期四",
+"星期五",
+"星期六");
+theday = [today.getYear()+1900]+"-" + [today.getMonth()+1]+"-" +today.getDate() + "      " + d[today.getDay()+1];
+intHours = today.getHours();
+intMinutes = today.getMinutes();
+intSeconds = today.getSeconds();
+if (intHours == 0) {
+hours = "00:";
+xfile = "      ";
+} else if (intHours < 24) {
+hours = intHours+":";
+xfile = "    ";
+} else if (intHours == 24) {
+hours = "12:";
+xfile = "    ";
+} else {
+intHours = intHours - 12
+hours = intHours + ":";
+xfile = "    ";
+}
+if (intMinutes < 10) {
+minutes = "0"+intMinutes+":";
+} else {
+minutes = intMinutes+":";
+}
+if (intSeconds < 10) {
+seconds = "0"+intSeconds+" ";
+} else {
+seconds = intSeconds+" ";
+}
+timeString = theday+xfile+hours+minutes+seconds;
+Clock.innerHTML = timeString;
+window.setTimeout("tick();", 100);
+}
+window.onload = tick;
+</script>
+
+	
+	</div>
+    
+    <dl class="leftmenu">
+        
+    <dd>
+    <a href="rwcy.asp"  target="rightFrame"><div class="title">
+    <span><img src="images/leftico01.png" /></span>任务成员
+    </div></a>
+       
+    </dd>
+        
+    
+    <dd>
+    <div class="title">
+    <a href="shmd.asp"  target="rightFrame"><span><img src="images/leftico02.png" /></span>审核名单
+    </div></a>
+      
+    </dd> 
+    
+    
+    <dd>
+    <div class="title"><span><img src="images/leftico03.png" /></span>出任成员</div>
+    <ul class="menuson" style="display:block;">
+		<li><cite></cite><a href="快捷问答.txt" target="rightFrame">快捷问题</a><i></i></li>
+		<li><cite></cite><a href="快捷键.txt" target="rightFrame">快捷键</a><i></i></li>
+        <li><cite></cite><a href="任务单.txt" target="rightFrame">任务单</a><i></i></li>
+		<li><cite></cite><a href="公司证件.html" target="rightFrame">公司证件</a><i></i></li>
+		<li><cite></cite><a href="记事本.txt" target="rightFrame">记事本</a><i></i></li>
+		<li><cite></cite><a href="经典案例.html" target="rightFrame">经典案例</a><i></i></li>
+    </ul>    
+    </dd>  
+    
+    
+    <dd><a href="rwgl.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>任务管理</div>  </a> 
+    </dd> 
+	 <dd><a href="jjff.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>奖金发放</div> </a>  
+    </dd>  
+	 <dd><a href="rkjl.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>返款记录</div>  </a> 
+    </dd> 
+	
+	
+	
+	 <dd><div class="title"><span><img src="images/leftico03.png" /></span>财务管理</div>
+    <ul class="menuson" style="display:block;">
+        <li><cite></cite><a href="请求结算.html" target="rightFrame">请求结算</a><i></i></li>
+        <li><cite></cite><a href="结算代码.htm" target="rightFrame">结算中心</a><i></i></li>
+        <li><cite></cite><a href="swkz.asp" target="rightFrame" >事务快照</a><i></i></li>
+        <li><cite></cite><a href="激活表格.htm" target="rightFrame">财务报表</a><i></i></li>
+    </ul>    
+    </dd> 
+	
+	
+	<dd><a href="sj.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>商家列表</div> </a>   
+    </dd>  
+	
+	<dd><a href="ht.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>合同管理</div></a>    
+    </dd>  
+    
+	<dd><a href="yh.asp"  target="rightFrame"><div class="title"><span><img src="images/leftico04.png" /></span>合作银行</div> </a>  
+    </dd>  
+    </dl>
+    
+</body>
+</html>
+
